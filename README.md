@@ -7,6 +7,7 @@ Self-hosted services — Docker Compose configs for easy deployment across devic
 | Service | Description | Port |
 |---------|-------------|------|
 | [OpenClaw](openclaw/) | Autonomous AI agent | 3100 |
+| [Linux Desktop](linux-desktop/) | Ubuntu desktop in your browser (Kasm) | 6901 |
 
 ## Quick Start
 

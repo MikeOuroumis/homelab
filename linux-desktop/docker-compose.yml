@@ -1,0 +1,13 @@
+services:
+  desktop:
+    image: kasmweb/ubuntu-jammy-desktop:1.17.0
+    container_name: linux-desktop
+    platform: linux/arm64
+    restart: unless-stopped
+    shm_size: "512m"
+    ports:
+      - "6901:6901"
+    environment:
+      - VNC_PW=${VNC_PASSWORD:-changeme}
+    volumes:
+      - ./home:/home/kasm-user
