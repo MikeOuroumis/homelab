@@ -1,0 +1,14 @@
+services:
+  openclaw:
+    image: ghcr.io/openclaw/openclaw:2026.3.11
+    container_name: openclaw
+    restart: unless-stopped
+    ports:
+      - "3100:3000"
+    volumes:
+      - ./data:/root/.openclaw
+    env_file:
+      - .env
+    environment:
+      - PUID=${PUID:-1000}
+      - PGID=${PGID:-1000}
