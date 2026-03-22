@@ -1,2 +1,8 @@
 .env
 home/
+chrome-data/
+firefox-data/
+claude-data/
+openclaw-data/
+vscode-data/
+gitconfig

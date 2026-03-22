@@ -1,13 +1,22 @@
 services:
   desktop:
-    image: kasmweb/ubuntu-jammy-desktop:1.17.0
+    build: .
     container_name: linux-desktop
     platform: linux/arm64
     restart: unless-stopped
-    shm_size: "512m"
+    shm_size: "4g"
     ports:
       - "6901:6901"
+      - "18789:18790"
     environment:
       - VNC_PW=${VNC_PASSWORD:-changeme}
+      - KASM_FRAME_RATE=24
+      - KASM_QUALITY=6
     volumes:
       - ./home:/home/kasm-user
+      - ./chrome-data:/home/kasm-user/.config/google-chrome
+      - ./firefox-data:/home/kasm-user/.mozilla
+      - ./claude-data:/home/kasm-user/.claude
+      - ./openclaw-data:/home/kasm-user/.openclaw
+      - ./gitconfig:/home/kasm-user/.gitconfig
+      - ./vscode-data:/home/kasm-user/.config/Code
