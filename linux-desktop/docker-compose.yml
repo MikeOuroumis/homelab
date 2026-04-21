@@ -8,6 +8,7 @@ services:
     ports:
       - "6901:6901"
       - "18789:18790"
+      - "3010:3010"
     environment:
       - VNC_PW=${VNC_PASSWORD:-changeme}
       - KASM_FRAME_RATE=24
